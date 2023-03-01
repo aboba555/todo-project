@@ -5,6 +5,7 @@ window = customtkinter.CTk()
 window.geometry("800x800")
 window.resizable(False,False)
 window.title("Todo")
+customtkinter.set_appearance_mode("dark")
 
 fot = customtkinter.CTkLabel(master=None,text="𝐓𝐨 𝐃𝐨",text_color="#F3DFBF",font=("",70))
 fot.place(x=310,y=10)
@@ -13,9 +14,9 @@ fot = customtkinter.CTkLabel(master=None,text="𝐛𝐲 𝐚𝐛𝐨𝐛𝐚𝟓
 fot.place(x=580,y=610)
 
 def add_item():
-    if 70 < len(my_entry.get()):
+    if 60 < len(my_entry.get()):
         my_entry.delete(0,END)
-    if my_entry.get() == "":
+    elif my_entry.get().isspace():
         my_entry.delete(0,END)
     else:
         my_list.insert(END,my_entry.get())
@@ -62,7 +63,8 @@ my_list = Listbox(my_frame,
                   activestyle="none",
                   fg = "white",
                   highlightthickness=0,
-                  selectbackground="#a6a6a6")
+                  selectbackground="#a6a6a6",
+                  background="#353232")
 my_list.pack()
 
 my_scrollbar = Scrollbar(my_frame)
