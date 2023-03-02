@@ -7,6 +7,7 @@ window.resizable(False,False)
 window.title("Todo")
 customtkinter.set_appearance_mode("Light")
 
+
 fot = customtkinter.CTkLabel(master=None,text="𝐓𝐨 𝐃𝐨",text_color="#6C8AFF",font=("",70))
 fot.place(x=310,y=10)
 
