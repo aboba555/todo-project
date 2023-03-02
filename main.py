@@ -5,13 +5,14 @@ window = customtkinter.CTk()
 window.geometry("800x800")
 window.resizable(False,False)
 window.title("Todo")
-customtkinter.set_appearance_mode("dark")
+customtkinter.set_appearance_mode("Light")
 
-fot = customtkinter.CTkLabel(master=None,text="𝐓𝐨 𝐃𝐨",text_color="#F3DFBF",font=("",70))
+fot = customtkinter.CTkLabel(master=None,text="𝐓𝐨 𝐃𝐨",text_color="#6C8AFF",font=("",70))
 fot.place(x=310,y=10)
 
-fot = customtkinter.CTkLabel(master=None,text="𝐛𝐲 𝐚𝐛𝐨𝐛𝐚𝟓𝟓𝟓",text_color="#F3DFBF",font=("",35))
+fot = customtkinter.CTkLabel(master=None,text="𝐛𝐲 𝐚𝐛𝐨𝐛𝐚𝟓𝟓𝟓",text_color="#6C8AFF",font=("",35))
 fot.place(x=580,y=610)
+
 
 def add_item():
     if 60 < len(my_entry.get()):
@@ -21,6 +22,13 @@ def add_item():
     else:
         my_list.insert(END,my_entry.get())
         my_entry.delete(0,END)
+
+def setApperance():
+    if setapperanceDark.get() == True:
+        customtkinter.set_appearance_mode("Dark")
+    else:
+        customtkinter.set_appearance_mode("Light")
+
 
 def delete_item():
     my_list.delete(ANCHOR)
@@ -54,6 +62,10 @@ done_btn.place(x=250,y=165)
 
 important_btn = customtkinter.CTkButton(command=important_item,text="Important",master=None)
 important_btn.place(x=50,y=166)
+
+setapperanceDark = customtkinter.CTkCheckBox(command=setApperance,text="Dark",master=None)
+setapperanceDark.place(x=30,y=625)
+
 
 my_list = Listbox(my_frame,
                   font=("Helvetica",30),
