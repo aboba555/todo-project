@@ -64,8 +64,9 @@ done_btn.place(x=250,y=165)
 important_btn = customtkinter.CTkButton(command=important_item,text="Important",master=None)
 important_btn.place(x=50,y=166)
 
-setapperanceDark = customtkinter.CTkCheckBox(command=setApperance,text="Dark",master=None)
+setapperanceDark = customtkinter.CTkCheckBox(command=setApperance,master=None,text="Dark")
 setapperanceDark.place(x=30,y=625)
+
 
 
 my_list = Listbox(my_frame,
